@@ -9,6 +9,33 @@ int SingleNumber(vector <int>&nums){
     }
     return ans;
 }
+    // WAF for Linear Search 
+    int LinearSearch(vector <int> nums,int searchNum){
+        int flag = 0;
+        for(int val : nums){
+            if(val==searchNum){
+                flag=1;
+                return true;
+            }
+        }
+        if (flag==0){
+            return false;
+        }
+        
+    }
+
+    // WAF to Reverse a  Vector 
+    void ReverseVector(vector <int> &nums){
+        int start=0;
+        int end=nums.size()-1;
+        while(start<=end){
+            swap(nums[start],nums[end]);
+            start ++;
+            end--;
+        }
+    }
+
+
 int main(){
     // =========(Vector Declaration )==========
     vector <int> vec; //size=0,capacity=0
@@ -49,6 +76,12 @@ int main(){
 
     // Calling SingleNumber  function
     cout <<" Single Number = " <<SingleNumber(nums) <<endl;
+    cout << LinearSearch(nums,9)<<endl;
+    ReverseVector(nums);
+    for(int val : nums){
+        cout <<val << " ";
+    }
+    cout <<endl;
 
 
 
